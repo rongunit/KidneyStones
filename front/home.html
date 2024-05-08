@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome page</title>
+    <style>
+      /* Add some basic styling */
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click a button to choose the action</h1>
+    <button onclick="redirectToUpload()">Upload Files</button>
+    <button onclick="redirectToGraph()">Show example graph</button>
+    <button onclick="redirectToFileList()">Show existing files</button>
+
+    <script>
+      function redirectToUpload(){
+        window.location.href = 'upload.html';
+      }
+      function redirectToGraph(){
+        window.location.href = 'graph.html';
+      }
+      function redirectToFileList(){
+        window.location.href = 'fileList.html';
+      }
+    </script>
+  </body>
+</html>

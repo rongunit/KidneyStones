@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100%;
+}
+
+.upload-section {
+    margin-bottom: 20px; /* Add margin between sections */
+}
+
+#home-button {
+    margin-top: 20px; /* Add margin above the "Go back" button */
+}
+
+#response{
+    margin-top: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+#fileList {
+    margin-top: 20px;
+}
+
+.file-item {
+    margin-bottom: 5px;
+}
