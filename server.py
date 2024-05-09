@@ -1,12 +1,15 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException, Request
 from typing import List
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.templating import Jinja2Templates
 import plotly.graph_objs as go
 import os
 
 
 app = FastAPI(dbug=True) # run server with: uvicorn server:app --reload
+
+templates = Jinja2Templates(directory="templates")
 
 UPLOAD_DIR = "uploads"
 
@@ -94,3 +97,13 @@ async def delete_files():
         elif os.path.isdir(full_path):
             delete_files(full_path) #remove the files inside the inner directory
             os.rmdir(full_path)
+
+
+@app.get('/index')
+async def send_html(request: Request):
+    data = "Текст в теле страницы"
+    return templates.TemplateResponse("base.html", 
+                                      {
+                                          "request":request,
+                                          "content": data
+                                          })
