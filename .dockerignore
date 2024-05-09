@@ -1,0 +1,12 @@
+env/
+_pycahce_/
+
+uploads/
+.git/
+
+*.env
+*.env.*
+env.*
+
+.venv/
+.vscode/
